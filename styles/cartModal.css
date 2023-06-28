@@ -1,0 +1,100 @@
+.modal {
+  z-index: 5;
+  background-color: rgba(0,0,0,0.4); /* Transparent dimmed overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal .container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+
+.modal .body {
+  box-shadow: inset 1px 1px 12px var(--lightGreen-2);
+  display: inline-block;
+  background-color: var(--lightGreen-1);
+  /* min-height: 360px; */
+  width: 370px;
+  border-radius: 12px;
+  padding: 10px;
+  color:var(--black-3);
+}
+
+.CartItemList {
+  display: table;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 2px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.ItemHeadingRow {
+  display: table-row;
+  font-weight: bold;
+  background-color: var(--green-1);
+  border-radius: 20px;
+  color: white
+}
+.ItemHeadingCell {
+  display: table-cell;
+  padding: 0 8px;
+}
+
+.ItemDataRow {
+  display: table-row;
+}
+.ItemDataCell {
+  display: table-cell;
+}
+
+.ItemAmountRow {
+  display: table-row;
+  background-color: var(--green-2);
+  border-top: 1px double black;
+}
+.ItemAmountCell {
+  display: table-cell;
+}
+
+.ItemCheckoutRow {
+  display: table-row;
+  background-color: var(--green-2);
+  border-radius: 20px;
+  border-top: 1px solid black;
+  text-decoration: none;
+}
+.ItemCheckoutCell {
+  display: table-cell;
+}
+#checkout {
+  color: var(--green-1);
+}
+
+#checkout:link {
+  text-decoration: none;
+}
+
+#checkout:visited {
+  text-decoration: none;
+}
+
+#checkout:hover {
+  text-decoration: none;
+}
+
+#checkout:active {
+  text-decoration: none;
+}

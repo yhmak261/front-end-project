@@ -1,0 +1,165 @@
+/* App desc style */
+
+#app-desc {
+    padding: 2rem;
+}
+
+.app-desc-wrapper {
+    background-color: var(--lightGreen-1);
+    padding: 2rem 4rem;
+    border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .app-desc-wrapper {
+        /* max-width: 1000px; */
+        margin: 0 auto;
+    }
+}
+
+/*End app desc style */
+
+/*Survey styles (mobile) */
+.diet-habit-survey-wrapper {
+    margin: 0 auto;
+}
+.diet-habit-survey-question-item {
+    background: #fff;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 10px;
+    /* display: flex; */
+    border: 1px solid var(--lightGreen-1);
+}
+
+.diet-habit-survey-question-item:nth-child(even) {
+    background: var(--white-1);
+}
+
+.diet-habit-survey-question-title {
+    line-height: 24px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+}
+
+.diet-habbit-radio-wrapper {
+    margin: 10px;
+    flex: 1;
+}
+
+.diet-habbit-radio-wrapper input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.diet-habbit-radio-wrapper label {
+    display: block;
+    background-color: var(--lightGreen-1);
+    padding: 10px 20px;
+    font-family: "Raleway";
+    font-size: 16px;
+    border: 1px solid var(--green-2);
+    border-radius: 30px;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.diet-habbit-radio-wrapper input[type="radio"]:checked + label {
+    background-color: var(--green-2);
+    border-color: var(--green-1);
+}
+
+@media only screen and (max-width: 768px) {
+    #diet-habit-survey-mobile {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #diet-habit-survey-mobile {
+        display: none;
+    }
+}
+
+/*End survey title (Mobile)*/
+
+/*survey style (PC)*/\\
+#diet-habit-survey-pc {
+    padding: 0;
+}
+.diet-habit-pc-wrapper table {
+    width: 100%;
+    font-family: "Raleway";
+}
+
+.survey-table {
+    font-size: 1.6rem;
+}
+
+.table-head {
+    font-weight: 600;
+}
+
+.survey-table th,
+.survey-table td {
+    padding: 2rem;
+    text-align: center;
+}
+
+.survey-table-col {
+    width: 8.33334%;
+}
+
+.survey-table-col.q {
+    width: 58.333333%;
+}
+
+.survey-table thead {
+    border-bottom: 1px solid var(--black-1);
+    font-family: "Poppins";
+}
+
+.survey-table {
+    margin-top: 2rem;
+}
+
+.survey-table tbody tr:nth-child(odd) {
+    background-color: var(--lightGreen-1);
+}
+
+.survey-table-col {
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+    #diet-habit-survey-pc {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #diet-habit-survey-pc {
+        display: flex;
+    }
+}
+
+/*End survey style (PC)*/
+
+/* Result style (Default: hidden) */
+#result {
+    display: none;
+    width: 100%;
+}
+
+.result-item {
+    background-color: var(--lightGreen-1);
+    padding: 2rem 5rem;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.score {
+    font-size: 2rem;
+}

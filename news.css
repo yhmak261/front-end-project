@@ -1,0 +1,137 @@
+/* Page Title style */
+
+#page-title {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.page-title-text {
+    font-size: 3.6rem;
+    color: var(--black-1);
+    text-align: center;
+}
+
+/* End Page Title style*/
+
+/* Page sublink style */
+#page-sublink {
+    padding: 1.2rem;
+}
+
+.page-sublink-list li {
+    display: block;
+    padding: 0.5rem;
+}
+
+.page-sublink-list li a {
+    font-size: 1.8rem;
+    font-family: Poppins;
+    color: var(--black-2);
+    padding: 0.5rem;
+  }
+
+@media only screen and (min-width: 768px) {
+    #page-sublink {
+        padding: 1.2rem;
+    }
+
+    #page-sublink ul {
+        display: flex;
+        justify-content: space-around;
+        font-family: "Poppins";
+        font-size: 1.6rem;
+    }
+}
+
+/*End page sublink style*/
+
+/* news item style */
+#news {
+    padding: 0;
+}
+
+.news-wrapper {
+    display: grid;
+	/* grid-template-columns: repeat(autofit, minmax(140px, 1fr)); */
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 1rem;
+}
+
+.news-item {
+	flex: 1;
+	display: flex;
+	gap: 2rem;
+	background-color: var(--lightGreen-1);
+	padding: 1.5rem;
+	border-radius: 12px;
+}
+
+.news-item-img,
+.news-item-info {
+    flex: 1;
+}
+
+.news-item-content {
+	flex: 5;
+}
+
+.news-item-img img {
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.news-item-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.news-item-content,
+.news-author {
+    font-family: "Poppins";
+}
+
+.news-item-content {
+    margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .news-wrapper {
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 3rem;
+    }
+    
+    .news-item {
+		flex-direction: row;
+		padding: 1.5rem;
+		border-radius: 12px;
+		gap: 1rem;
+    }
+    
+    .news-item-img img {
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    
+    .news-item-title {
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+    }
+
+    .news-item-img {
+        flex:3;
+    }
+
+    .news-item-info {
+        flex: 3;
+    }
+}
+
+#news-viewMoreBtn {
+    padding: 2rem;
+}
+
+.news-viewMoreBtn-wrapper {
+    margin: 0 auto;
+    display: inline
+}

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <title>Contact | Health Wizard</title>
+  <!-- custom css -->
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/globalStyles.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/tablebox.css" />
+  <link rel="stylesheet" href="" />
+  <!-- Shopping Cart -->
+  <link rel="stylesheet" href="./styles/cartModal.css">
+  <script src="./json/ProductSeries.js"></script>
+  <script src="./javascript/cart.js"></script>
+  <style>
+    #contact-section {
+      padding-bottom: 20px;
+    }
+  </style>
+  <!-- aos css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="./javascript/Paginator.js"></script>
+  <script src="./json/staffs.js"></script>
+  <script>
+    // The reason for not using "modules" is to display records without starting the server.
+    let objectLength = Object.values(staff.staffs).length;
+    let rowsPerPage = 20;
+    let pageNo = objectLength > 0 ? 1 : 0;
+    let paginator = null;
+    let sortingBy = "Normal";
+    let paramsString = null;
+
+    function queryString() {
+      paramsString = `?page=${pageNo}`;
+      paramsString += '';
+    }
+
+
+    function readData() {
+      queryString();
+
+      console.log("Current Page is: " + pageNo);
+      console.log("paramsString is: " + paramsString);
+
+      window.history.pushState(null, null, paramsString);
+      paginator = new Paginator(objectLength, rowsPerPage, pageNo);
+
+      // over total page back to page 1 start
+      if (pageNo > paginator.totalPages) {
+        pageNo = 1;
+        queryString();
+        alert('The last page is over, \n go back to the first page.');
+        window.history.pushState(null, null, paramsString);
+        paginator = new Paginator(objectLength, rowsPerPage, pageNo);
+      }
+      console.log(paginator.getInfo());
+      // over total page back to page 1 end
+    }
+
+    function rowAppend() {
+      for (let y = paginator.offset; y < paginator.endRow; y++) {
+        if (y == paginator.offset) {
+          headingRowAppend(staff.staffs[y]);
+        }
+        dataRowAppend(staff.staffs[y], y);
+      }
+    }
+
+    function headingRowAppend(obj) {
+      let table = document.getElementsByClassName("Table")[0];
+      let headingRow = document.createElement("div", "class");
+      let headingCell = null;
+      let heading = null;
+      let sorting = null;
+      headingRow.className = "HeadingRow";
+      Object.keys(obj).forEach((key) => {
+
+        headingCell = document.createElement("div", "class");
+        headingCell.className = "HeadingCell";
+
+        heading = document.createElement("div", "class");
+        heading.className = "Heading";
+        heading.innerText = key.replace(/_/g, ' ');
+
+        sorting = document.createElement("div", "class");
+        sorting.className = "Sorting";
+        sorting.id = key;
+        sorting.innerText = sortingBy;
+
+        headingCell.append(heading);
+        headingCell.append(sorting);
+        headingRow.append(headingCell);
+      });
+      table.innerHTML = null;
+      table.append(headingRow);
+    }
+
+    function dataRowAppend(obj, y) {
+      let dataRow = null;
+      let dataCell = null;
+      dataRow = document.createElement("div", "class");
+      dataRow.className = "DataRow";
+
+      for (const [key, value] of Object.entries(obj)) {
+
+        let heading = document.createElement("div", "class");
+        heading.className = "Heading";
+        heading.innerText = key.replace(/_/g, ' ');
+
+        let data = document.createElement("div", "class");
+        data.className = "Data";
+
+        let dataContent = '';
+        if (key.includes("email")) {
+          dataContent = `<a href="mailto:${value}">${value}</a>`;
+          data.innerHTML = dataContent;
+        } else {
+          data.innerText = value;
+        }
+
+
+        dataCell = document.createElement("div", "class");
+        dataCell.className = "DataCell";
+        dataCell.append(heading);
+        dataCell.append(data);
+
+        dataRow.append(dataCell);
+      }
+
+      let table = document.getElementsByClassName("Table")[0];
+      table.append(dataRow);
+    }
+
+    function pageListAppend() {
+      let pageList = document.getElementsByClassName("PageList");
+      let a, tmpNo, li;
+      pageList[0].innerHTML = null;
+
+      // Append First Page Start
+      a = document.createElement("a");
+      tmpNo = 1;
+      a.setAttribute("class", `First Page`);
+      a.setAttribute("id", `page-${tmpNo}`);
+      a.innerText = "First";
+      li = document.createElement("li");
+      li.append(a);
+      pageList[0].append(li);
+      // Append First Page End
+
+      // Append Prev Page Start
+      a = document.createElement("a");
+      a.setAttribute("class", `Prev Page`);
+      a.setAttribute("id", `page-${paginator.prevPage}`);
+      a.innerText = "Prev";
+      li = document.createElement("li");
+      li.append(a);
+      pageList[0].append(li);
+      // Append Prev Page End
+
+      // Append Page Edge Start
+      for (let i = paginator.leftEdge; i <= paginator.rightEdge; i++) {
+        a = document.createElement("a");
+        a.setAttribute("class", 'Page');
+        a.setAttribute("id", `page-${i}`)
+        a.innerText = i;
+        li = document.createElement("li");
+        li.append(a);
+        if (i == pageNo) {
+          li.style.background = "black";
+          li.style['box-shadow'] = "0px 0px 10px white inset";
+          li.style.transition = "0.2s";
+          li.style['transition-delay'] = "0.2";
+          li.style['font-weight'] = "300";
+        }
+        pageList[0].append(li);
+      }
+      // Append Page Edge End
+
+      // Append Next Page Start
+      a = document.createElement("a");
+      a.setAttribute("class", `Next Page`);
+      a.setAttribute("id", `page-${paginator.nextPage}`);
+      a.innerText = "Next";
+      li = document.createElement("li");
+      li.append(a);
+      pageList[0].append(li);
+      // Append Next Page End
+
+      // Append Last Page Start
+      a = document.createElement("a");
+      tmpNo = paginator.totalPages;
+      a.setAttribute("class", `Last Page`);
+      a.setAttribute("id", `page-${tmpNo}`);
+      a.innerText = "Last";
+      li = document.createElement("li");
+      li.append(a);
+      pageList[0].append(li);
+      // Append Last Page End
+    }
+
+    window.addEventListener("DOMContentLoaded", function (DOMContentLoadedEvent) {
+      
+      const paramsString = window.location.search;
+      let searchParams = new URLSearchParams(paramsString);
+      for (const p of searchParams) {
+        console.log(p);
+      }
+
+      console.log(searchParams);
+      console.log(`%c Has param page: %c${searchParams.has("page")}`, 'color:green', 'color:blue');
+      console.log(`%c Typeof param page: %c${typeof searchParams.get("page")}`, 'color:green', 'color:blue');
+
+
+      if (pageNo == 0 || isNaN(pageNo)) {
+        return;
+      }
+
+      if (searchParams.has("page") && typeof Number(searchParams.get("page")) == 'number') {
+        pageNo = Number(searchParams.get("page"));
+      }
+
+      readData();
+      rowAppend();
+      pageListAppend();
+
+      let pageList = document.getElementsByClassName("PageList")[0];
+      pageList.addEventListener("click", (thisClickedEvent) => {
+
+        console.clear();
+
+        if (thisClickedEvent.target.className.includes('Page') && thisClickedEvent.target.id.includes('page')) {
+          pageNo = Number(thisClickedEvent.target.id.split("-")[1]);
+          console.log(pageNo);
+        }
+
+        if (pageNo == 0 || isNaN(pageNo)) {
+          return;
+        }
+
+        if (pageNo > paginator.totalPages) {
+          pageNo = paginator.totalPages;
+        }
+        if (thisClickedEvent.target.className.includes('Sorting')) {
+          console.log(thisClickedEvent.target.innerText);
+        }
+
+        readData();
+        rowAppend()
+        pageListAppend();
+        window.scrollTo(0, 0);
+      });
+
+      document.addEventListener('scroll', function (e) {
+        console.clear();
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+        // When the user is [modifier]px from the bottom, fire the event.
+        let modifier = 10;
+        console.log("currentScroll: " + currentScroll);
+        console.log(" documentHeight: " + documentHeight);
+        if (currentScroll + modifier > documentHeight) {
+          if (window.innerWidth < 992) {
+            pageNo++;
+            readData();
+            rowAppend()
+            pageListAppend();
+            window.scrollTo(0, 0);
+          }
+        }
+      });
+
+      console.log(`%cTime taken to DOMContentLoaded: %c${DOMContentLoadedEvent.timeStamp}`, 'color:green', 'color:red');
+
+      productsInit();
+      localStorageInit("Products", products);
+      cartModalInit();
+    });
+  </script>
+</head>
+
+<body>
+  <!-- nav section -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="./index.html" class="logo-mobile">
+          <img src="./images/logo.png" alt="LOGOmobile" />
+        </a>
+        <nav>
+          <div class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-menu">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </div>
+          <div class="nav-bgOverlay"></div>
+          <ul class="nav-list">
+            <div class="nav-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div class="nav-list-wrapper">
+              <div class="nav-list-wrapper-left">
+                <a href="./index.html" class="logo-desktop">
+                  <img src="./images/logo.png" alt="LOGOdesktop" />
+                </a>
+                <li><a class="nav-link" href="./index.html">Home</a></li>
+                <li><a class="nav-link" href="./apps.html">Apps</a></li>
+                <li><a class="nav-link" href="./news.html">News</a></li>
+                <li>
+                  <a class="nav-link" href="./product.html">Products</a>
+                </li>
+                <li><a class="nav-link" href="./contact.html">Contact</a></li>
+              </div>
+              <div class="nav-list-wrapper-right">
+                <li>
+                  <div class="shoppingCartOverlay"></div>
+                  <div class="shoppingCart-div">
+                    <a class="shopping-cart shopping-cart-onTheRight"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                      </svg></a>
+                  </div>
+                </li>
+                <li>
+                  <a class="shpping-cart-textVersion shopping-cart-onTheRight" href="./shopping-cart.html">My Cart</a>
+                </li>
+                <li>
+                  <a href="./login.html" class="login login-onTheRight btn btn-primary">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="./signup.html" class="sign-up sign-up-onTheRight btn">Sign up</a>
+                </li>
+                <li>
+                  <a href="./login.html" class="loginOrSignUp btn btn-primary">
+                    Login / Sign-up
+                  </a>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- end nav section -->
+
+  <!-- modal -->
+  <div class="modal hidden">
+    <div class="container">
+      <div class="body" style="color: green; font-size: 16px;">
+        <div class="CartItemList">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+
+  <!-- description section -->
+  <section id="title" style="padding-bottom: 10px">
+    <div class="container">
+      <!-- <h1 class="desc-title">Contact</h1> -->
+      <p class="desc-info">
+        Please contact our health consultant
+      </p>
+    </div>
+  </section>
+  <!-- end description section -->
+
+  <section style="padding-top: 10px">
+    <div class="TableBox">
+      <div class="Table">
+
+      </div>
+      <div class="PageRow">
+        <div class="PageListCell">
+          <ul class="PageList">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-col-1">
+          <div class="footer-logo">
+            <img src="./images/logo.png" alt="LOGO" />
+          </div>
+          <p class="footer-info">
+            Health Wizard is lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Vel aliquam praesentium vitae aperiam beatae
+            sapiente totam nemo.
+          </p>
+          <div class="footer-social">
+            <h4 class="footer-social-title">Follow us</h4>
+            <ol class="footer-social-list">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-facebook">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-twitter">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                  </svg>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <h3 class="footer-text-title">Links</h3>
+          <ol class="footer-text">
+            <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="./apps.html">Apps</a>
+            </li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./product.html">Products</a></li>
+            <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+            <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          </ol>
+        </div>
+        <div class="footer-col-3">
+          <h3 class="footer-text-title">Support</h3>
+          <ol class="footer-text">
+            <li><a href="./contact.html">Contact us</a></li>
+            <li><a href="./support-center.html">Support Center</a></li>
+            <li><a href="./feedback.html">Feedback</a></li>
+          </ol>
+        </div>
+        <div class="footer-col-4">
+          <h3 class="footer-text-title">Contact</h3>
+          <ol class="footer-text">
+            <li>
+              <a href="#">8765 4321</a>
+            </li>
+            <li>
+              <a href="#">healthwizard@mail.com</a>
+            </li>
+            <li>
+              <a href="#">11-C Blk A Marvel Industrial Building 25-31 Kwai Fung
+                Crescent Kwai Chung, Central, Hong Kong</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="copyright">
+      <div class="container">
+        <p class="copyright-text">
+          © copyright 2023 Health Wizard | All rights reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- end footer -->
+
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- custom script -->
+  <script src="./javascript/main.js"></script>
+</body>
+
+</html>

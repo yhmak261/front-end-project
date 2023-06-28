@@ -1,0 +1,255 @@
+/* apps main page styles */
+#apps {
+  padding-top: 0;
+}
+
+.apps-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.apps-item {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  background-color: var(--lightGreen-1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.apps-item-img {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.apps-item-img img {
+  object-fit: cover;
+}
+
+.apps-item-info-wrapper {
+  flex: 1;
+}
+
+.apps-item-info-title {
+  font-size: 1.8rem;
+  color: var(--green-1);
+  line-height: 1.2em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.apps-item-info-desc {
+  color: var(--black-1);
+  text-align: left;
+  font-size: 1.4rem;
+  line-height: 1.6em;
+}
+
+@media only screen and (min-width: 768px) {
+  .apps-wrapper {
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+  }
+
+  .apps-item {
+    padding: 3rem;
+    gap: 2rem;
+    height: 100%;
+  }
+
+  .apps-item-info-title {
+    font-size: 2.8rem;
+    gap: 2rem;
+  }
+
+  .apps-item-info-desc {
+    font-size: 2rem;
+    line-height: 1.6em;
+  }
+}
+
+/* bmi calculator styles */
+#title {
+  padding-bottom: 0;
+}
+
+.calc-wrapper {
+  max-width: 600px;
+  border-radius: 12px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-content {
+  background-color: var(--lightGreen-1);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.calc-input {
+  font-family: Poppins;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+
+
+.calc-input input {
+  width: 100%;
+  border: none;
+  background-color: whitesmoke;
+  font-size: 1.4rem;
+  font-family: Raleway;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  color: var(--black-2);
+}
+
+#calculate {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#result {
+  font-size: 1.6rem;
+  font-family: Poppins;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.calc-result {
+  font-size: 1.6rem;
+  line-height: 1em;
+  font-family: Poppins;
+  color: var(--black-1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.apps-goBack {
+  margin-top: 5rem;
+}
+
+.apps-goBack a {
+  color: var(--green-1);
+}
+
+@media only screen and (min-width: 768px) {
+  .calc-wrapper {
+    flex-direction: row;
+    max-width: 1200px;
+    justify-content: center;
+  }
+
+  .calc-content {
+    padding: 3.5rem;
+    margin-right: 5rem;
+  }
+
+  .calc-input {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .calc-input input {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  #calculate {
+    margin-bottom: 3rem;
+  }
+
+  #result {
+    font-size: 3rem;
+  }
+
+  p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .calc-chart {
+    margin-top: 3rem;
+  }
+
+  .calc-result {
+    font-size: 2.4rem;
+  }
+
+  .apps-goBack {
+    margin-top: 10rem;
+  }
+}
+
+/* health video palyer styles */
+.vidPlayer-wrapper {
+  text-align: center;
+}
+
+/* calorie counter styles */
+.calorie-edit,
+.calorie-del {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+  color: var(--green-1);
+}
+
+#calorie-food-list {
+  font-family: Poppins;
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  color: var(--black-1);
+}
+
+#calorie-food-list li {
+  margin-bottom: 1.5rem;
+}
+
+.calorie-addFoodBtn {
+  margin-top: 2rem;
+}
+
+.calarie-foodlogTitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+
+@media only screen and (min-width: 768px) {
+  #calorie-food-list {
+    font-size: 1.6rem;
+    line-height: 1.5em;
+  }
+
+  .calarie-foodlogTitle {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+}

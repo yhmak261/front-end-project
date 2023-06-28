@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News | Health Wizard</title>
+  <!-- custom css -->
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/globalStyles.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/apps-diet-habit-measure.css" />
+  <link rel="stylesheet" href="./styles/news.css" />
+
+  <!-- aos css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <!-- nav section -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="./index.html" class="logo-mobile">
+          <img src="./images/logo.png" alt="LOGOmobile" />
+        </a>
+        <nav>
+          <div class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-menu">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </div>
+          <div class="nav-bgOverlay"></div>
+          <ul class="nav-list">
+            <div class="nav-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div class="nav-list-wrapper">
+              <div class="nav-list-wrapper-left">
+                <a href="./index.html" class="logo-desktop">
+                  <img src="./images/logo.png" alt="LOGOdesktop" />
+                </a>
+                <li><a class="nav-link" href="./index.html">Home</a></li>
+                <li><a class="nav-link" href="./apps.html">Apps</a></li>
+                <li><a class="nav-link" href="./news.html">News</a></li>
+                <li>
+                  <a class="nav-link" href="./product.html">Products</a>
+                </li>
+                <li><a class="nav-link" href="./contact.html">Contact</a></li>
+                <!-- <li>
+                <a class="shopping-cart shopping-cart-onTheLeft" href=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <div class="login login-onTheLeft btn btn-primary">
+                  Login
+                </div>
+              </li>
+              <li>
+                <div class="sign-up sign-up-onTheLeft btn">Sign up</div>
+              </li> -->
+              </div>
+              <div class="nav-list-wrapper-right">
+                <li>
+                  <div class="shoppingCartOverlay"></div>
+                  <div class="shoppingCart-div">
+                    <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a class="shpping-cart-textVersion shopping-cart-onTheRight" href="./shopping-cart.html">My Cart</a>
+                </li>
+                <li>
+                  <a href="./login.html" class="login login-onTheRight btn btn-primary">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="./signup.html" class="sign-up sign-up-onTheRight btn">Sign up</a>
+                </li>
+                <li>
+                  <a href="./login.html" class="loginOrSignUp btn btn-primary">
+                    Login / Sign-up
+                  </a>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- end nav section -->
+
+  <!--Page Title-->
+  <section id="page-title">
+    <div class="container">
+      <h2 class="page-title-text">Diet Habit Measure</h2>
+    </div>
+  </section>
+  <!--End of Page Title-->
+
+  <!-- app desc -->
+  <section id="app-desc">
+    <div class="container">
+      <div class="app-desc-wrapper">
+        <p class="app-desc-text">
+          This measurement table refers to the "Department of Health's
+          Overcoming Obesity: Weight Loss Guidebook". <br />Please choose the
+          appropriate answer according to your diet status in the last
+          week.<br />
+          Always: more than eight times out of ten<br />
+          Often: 6 to 8 times out of 10<br />
+          Occasionally: 3 to 5 times out of 10<br />
+          Rarely: 1 to 2 times in 10 or none at all<br />
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- end app desc-->
+
+  <!-- Diet habit survey (mobile ver) -->
+  <section id="diet-habit-survey-mobile">
+    <div class="container">
+      <div class="diet-habit-survey-wrapper">
+        <form action="#" class="diet-habit-survey-form" onsubmit="return false;">
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              1. I eat three meals regularly.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q1" id="seldom1" class="radio-input" value="0" required="required" />
+              <label for="seldom1" class="radio-label">Seldom</label>
+            </div>
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q1" id="sometimes1" class="radio-input" value="1" />
+              <label for="sometimes1" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q1" id="often1" class="radio-input" value="2" />
+              <label for="often1" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q1" id="always1" class="radio-input" value="3" />
+              <label for="always1" class="radio-label">Always</label>
+            </div>
+
+          </div>
+
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              2. I do not eat sweets or snacks.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q2" id="seldom2" class="radio-input" value="0" required="required" />
+              <label for="seldom2" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q2" id="sometimes2" class="radio-input" value="1" />
+              <label for="sometimes2" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q2" id="often2" class="radio-input" value="2" />
+              <label for="often2" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q2" id="always2" class="radio-input" value="3" />
+              <label for="always2" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              3. I chew slowly when I eat, chewing each bite at least twenty times before swallowing.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q3" id="seldom3" class="radio-input" value="0" required="required" />
+              <label for="seldom3" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q3" id="sometimes3" class="radio-input" value="1" />
+              <label for="sometimes3" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q3" id="often3" class="radio-input" value="2" />
+              <label for="often3" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q3" id="always3" class="radio-input" value="3" />
+              <label for="always3" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              4. When I am thirsty or very hot, I drink plain water instead of soda, cola, sports drinks, sweetened tea or coffee drinks.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q4" id="seldom4" class="radio-input" value="0" required="required" />
+              <label for="seldom4" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q4" id="sometimes4" class="radio-input" value="1" />
+              <label for="sometimes4" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q4" id="often4" class="radio-input" value="2" />
+              <label for="often4" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q4" id="always4" class="radio-input" value="3" />
+              <label for="always4" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              5. I avoid fried or fatty foods (such as cashews, peanuts, melon seeds, potato chips).
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q5" id="seldom5" class="radio-input" value="0" required="required" />
+              <label for="seldom5" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q5" id="sometimes5" class="radio-input" value="1" />
+              <label for="sometimes5" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q5" id="often5" class="radio-input" value="2" />
+              <label for="often5" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q5" id="always5" class="radio-input" value="3" />
+              <label for="always5" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              6. I eat fruit every day.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q6" id="seldom6" class="radio-input" value="0" required="required" />
+              <label for="seldom6" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q6" id="sometimes6" class="radio-input" value="1" />
+              <label for="sometimes6" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q6" id="often6" class="radio-input" value="2" />
+              <label for="often6" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q6" id="always6" class="radio-input" value="3" />
+              <label for="always6" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              7. I eat green vegetables every day.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q7" id="seldom7" class="radio-input" value="0" required="required" />
+              <label for="seldom7" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q7" id="sometimes7" class="radio-input" value="1" />
+              <label for="sometimes7" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q7" id="often7" class="radio-input" value="2" />
+              <label for="often7" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q7" id="always7" class="radio-input" value="3" />
+              <label for="always7" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              8. I will eat supper.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q8" id="seldom8" class="radio-input" value="3" required="required" />
+              <label for="seldom8" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q8" id="sometimes8" class="radio-input" value="2" />
+              <label for="sometimes8" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q8" id="often8" class="radio-input" value="1" />
+              <label for="often8" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q8" id="always8" class="radio-input" value="0" />
+              <label for="always8" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              9. I eat while watching TV or reading a book or magazine.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q9" id="seldom9" class="radio-input" value="3" required="required" />
+              <label for="seldom9" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q9" id="sometimes9" class="radio-input" value="2" />
+              <label for="sometimes9" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q9" id="often9" class="radio-input" value="1" />
+              <label for="often9" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q9" id="always9" class="radio-input" value="0" />
+              <label for="always9" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              10. When I am in a bad mood, I eat to relieve myself.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q10" id="seldom10" class="radio-input" value="3" required="required" />
+              <label for="seldom10" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q10" id="sometimes10" class="radio-input" value="2" />
+              <label for="sometimes10" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q10" id="often10" class="radio-input" value="1" />
+              <label for="often10" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q10" id="always10" class="radio-input" value="0" />
+              <label for="always10" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              11. I eat to reward myself or to celebrate.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q11" id="seldom11" class="radio-input" value="3" required="required" />
+              <label for="seldom11" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q11" id="sometimes11" class="radio-input" value="2" />
+              <label for="sometimes11" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q11" id="often11" class="radio-input" value="1" />
+              <label for="often11" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q11" id="always11" class="radio-input" value="0" />
+              <label for="always11" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          
+          <div class="diet-habit-survey-question-item">
+            <div class="diet-habit-survey-question-title">
+              12. I only go shopping when I am very hungry.
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q12" id="seldom12" class="radio-input" value="3" required="required" />
+              <label for="seldom12" class="radio-label">Seldom</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q12" id="sometimes12" class="radio-input" value="2" />
+              <label for="sometimes12" class="radio-label">Sometimes</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q12" id="often12" class="radio-input" value="1" />
+              <label for="often12" class="radio-label">Often</label>
+            </div>
+
+            <div class="diet-habbit-radio-wrapper">
+              <input type="radio" name="freq-opt-q12" id="always12" class="radio-input" value="0" />
+              <label for="always12" class="radio-label">Always</label>
+            </div>
+          </div>
+
+          <button type="submit" class="loginBtn btn btn-primary" check="true" role="button" onclick="result()">
+            Submit
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!-- End diet habit survey (mobile ver)-->
+
+  <!-- diet habit survey (PC ver)-->
+  <section id="diet-habit-survey-pc">
+    <div class="container">
+      <form action="#" onsubmit="return false;">
+        <div class="diet-habit-pc-wrapper">
+            <table class="survey-table">
+              <thead>
+                <tr class="table-head">
+                  <th class="survey-table-col">No</th>
+                  <th class="survey-table-col q">Question</th>
+                  <th class="survey-table-col">Seldom</th>
+                  <th class="survey-table-col">Sometimes</th>
+                  <th class="survey-table-col">Often</th>
+                  <th class="survey-table-col">Always</th>
+                </tr>
+              </thead>
+
+              <!-- Questions -->
+              <tbody>
+                <tr>
+                  <td class="survey-table-col">1</td>
+                  <td class="survey-table-col q">I eat three meals regularly.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q1-pc" id="seldom1" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q1-pc" id="sometimes1" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q1-pc" id="often1" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q1-pc" id="always1" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">2</td>
+                  <td class="survey-table-col q">I do not eat sweets or snacks.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q2-pc" id="seldom2" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q2-pc" id="sometimes2" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q2-pc" id="often2" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q2-pc" id="always2" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">3</td>
+                  <td class="survey-table-col q">I chew slowly when I eat, chewing each bite at least twenty times before swallowing.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q3-pc" id="seldom3" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q3-pc" id="sometimes3" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q3-pc" id="often3" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q3-pc" id="always3" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">4</td>
+                  <td class="survey-table-col q">When I am thirsty or very hot, I drink plain water instead of soda, cola, sports drinks, sweetened tea or coffee drinks.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q4-pc" id="seldom4" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q4-pc" id="sometimes4" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q4-pc" id="often4" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q4-pc" id="always4" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">5</td>
+                  <td class="survey-table-col q">I avoid fried or fatty foods (such as cashews, peanuts, melon seeds, potato chips).</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q5-pc" id="seldom5" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q5-pc" id="sometimes5" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q5-pc" id="often5" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q5-pc" id="always5" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">6</td>
+                  <td class="survey-table-col q">I eat fruit every day.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q6-pc" id="seldom6" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q6-pc" id="sometimes6" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q6-pc" id="often6" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q6-pc" id="always6" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">7</td>
+                  <td class="survey-table-col q">I eat green vegetables every day.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q7-pc" id="seldom7" class="radio-input" value="0" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q7-pc" id="sometimes7" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q7-pc" id="often7" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q7-pc" id="always7" class="radio-input" value="3" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">8</td>
+                  <td class="survey-table-col q">I will eat supper.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q8-pc" id="seldom8" class="radio-input" value="3" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q8-pc" id="sometimes8" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q8-pc" id="often8" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q8-pc" id="always8" class="radio-input" value="0" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">9</td>
+                  <td class="survey-table-col q">I eat while watching TV or reading a book or magazine.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q9-pc" id="seldom9" class="radio-input" value="3" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q9-pc" id="sometimes9" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q9-pc" id="often9" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q9-pc" id="always9" class="radio-input" value="0" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">10</td>
+                  <td class="survey-table-col q">When I am in a bad mood, I eat to relieve myself.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q10-pc" id="seldom10" class="radio-input" value="3" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q10-pc" id="sometimes10" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q10-pc" id="often10" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q10-pc" id="always10" class="radio-input" value="0" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">11</td>
+                  <td class="survey-table-col q">I eat to reward myself or to celebrate.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q11-pc" id="seldom11" class="radio-input" value="3" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q11-pc" id="sometimes11" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q11-pc" id="often11" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q11-pc" id="always11" class="radio-input" value="0" /></td>
+                </tr>
+                <tr>
+                  <td class="survey-table-col">12</td>
+                  <td class="survey-table-col q">I only go shopping when I am very hungry.</td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q12-pc" id="seldom12" class="radio-input" value="3" required="required" />
+                  </td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q12-pc" id="sometimes12" class="radio-input" value="2" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q12-pc" id="often12" class="radio-input" value="1" /></td>
+                  <td class="survey-table-col"><input type="radio" name="freq-opt-q12-pc" id="always12" class="radio-input" value="0" /></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <button type="submit" class="loginBtn btn btn-primary" check="true" role="button" onclick="resultPC()">
+            Submit
+          </button>
+
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- End diet habit survey (PC ver)-->
+
+  <!-- Result -->
+  <section id="result">
+    <div class="container">
+      <div class="result-wrapper">
+        <div class="result-item">
+          <h3 class="score">
+            <!-- Use JS to append score here -->
+            Anatomy of eating behavior: 
+          </h3>
+          <p class="comment">
+            <!-- Use JS to append comment here -->
+            
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- End Result-->
+
+  <!-- app desc -->
+  <section id="app-desc">
+    <div class="container">
+      <div class="app-desc-wrapper">
+        <p class="app-desc-text">
+          The counting methods are as follows: Questions 1 to 7, 3 points for
+          "always", 2 points for "often", 1 point for "occasionally", and 0
+          points for "rarely".<br /><br />
+          For question numbers 8-12, answer "always" with 0 points, "often"
+          with 1 point, "occasionally" with 2 points, and "rarely" with 3
+          points.<br />
+          <br />
+          Eating behavior scoring instructions: 0-12 points, miserable! Crap!
+          Your eating behavior is very bad, it is recommended to make up your
+          mind to lose weight.<br /><br />
+          13-20 points, although you are a little better than 0-12 points,
+          don't "laugh like a turtle without a tail", please try to change
+          your eating habits.<br /><br />
+          21-30 points, come on! come on! It will be even better if the eating
+          habits continue to improve the small deficiencies.<br /><br />
+          31-36 points, you are awesome! Please persevere, you can easily get
+          healthy!
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- end app desc-->
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-col-1">
+          <div class="footer-logo">
+            <img src="./images/logo.png" alt="LOGO" />
+          </div>
+          <p class="footer-info">
+            Health Wizard is lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Vel aliquam praesentium vitae aperiam beatae
+            sapiente totam nemo.
+          </p>
+          <div class="footer-social">
+            <h4 class="footer-social-title">Follow us</h4>
+            <ol class="footer-social-list">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-facebook">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-twitter">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                  </svg>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <h3 class="footer-text-title">Links</h3>
+          <ol class="footer-text">
+            <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="./apps.html">Apps</a>
+            </li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./product.html">Products</a></li>
+            <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+            <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          </ol>
+        </div>
+        <div class="footer-col-3">
+          <h3 class="footer-text-title">Support</h3>
+          <ol class="footer-text">
+            <li><a href="./contact.html">Contact us</a></li>
+            <li><a href="./support-center.html">Support Center</a></li>
+            <li><a href="./feedback.html">Feedback</a></li>
+          </ol>
+        </div>
+        <div class="footer-col-4">
+          <h3 class="footer-text-title">Contact</h3>
+          <ol class="footer-text">
+            <li>
+              <a href="#">8765 4321</a>
+            </li>
+            <li>
+              <a href="#">healthwizard@mail.com</a>
+            </li>
+            <li>
+              <a href="#">11-C Blk A Marvel Industrial Building 25-31 Kwai Fung
+                Crescent Kwai Chung, Central, Hong Kong</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="copyright">
+      <div class="container">
+        <p class="copyright-text">
+          © copyright 2023 Health Wizard | All rights reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- end footer -->
+
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- custom script -->
+  <script src="./javascript/main.js"></script>
+  <script src="./javascript/app-diet.js"></script>
+</body>
+
+</html>

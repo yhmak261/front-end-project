@@ -1,0 +1,210 @@
+  .TableBox {
+    display: table;
+    margin: auto;
+    font-size: 1.6rem;
+    font-family: Poppins;
+  }
+
+  .HeadingRow,
+  .HeadingRow>.HeadingCell,
+  .DataRow,
+  .DataRow>.DataCell {
+    border: 1px solid black;
+  }
+
+  .DataRow {
+    background-color: var(--lightGreen-1);
+    font-family: Raleway;
+  }
+  
+  /* .DataRow>.DataCell {
+    background-color: var(--lightGreen-1);
+    font-family: Raleway;
+  } */
+
+  .PageRow {
+    display: table-row;
+    margin: auto;
+    font-size: 1.8rem;
+  }
+
+  .PageRow>.PageListCell {
+    display: table-cell;
+    margin: auto;
+    padding: 0;
+  }
+
+  .PageRow>.PageListCell>.PageList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .PageRow>.PageListCell>.PageList>li {
+    display: inline-block;
+    min-width: 21px;
+    background-color: #26643b;
+    color: aliceblue;
+    border-radius: 4px;
+    margin: 2px;
+  }
+
+  .PageRow>.PageListCell>.PageList>li:hover {
+    background-color: rgb(51, 51, 51);
+    cursor: pointer;
+  }
+
+  .PageRow>.PageListCell>.PageList>li>.Prev,
+  .PageRow>.PageListCell>.PageList>li>.Next {
+    display: inline-block;
+    color: white;
+    padding: 0;
+    min-width: 48px;
+  }
+
+  .PageRow>.PageListCell>.PageList>li>.First,
+  .PageRow>.PageListCell>.PageList>li>.Last,
+  .PageRow>.PageListCell>.PageList>li>.Prev,
+  .PageRow>.PageListCell>.PageList>li>.Next {
+    display: inline-block;
+    padding: 0;
+    min-width: 48px;
+  }
+
+  .PageRow>.PageListCell>.PageList>li>a {
+    display: inline-block;
+    padding: 0;
+    min-width: 18px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .Table {
+      display: table;
+      margin: auto;
+      border-collapse: collapse;
+      border-spacing: 2px;
+      border: 1px solid black;
+      min-width: 50vw;
+      margin-bottom: 10px;
+      box-shadow: 5px 5px rgb(0, 0, 0, 0.5);
+    }
+
+    .HeadingRow {
+      display: table-row;
+      font-weight: bold;
+      background-color: var(--green-1);
+      color: white;
+    }
+
+    .HeadingRow>.HeadingCell {
+      display: table-cell;
+      padding: 8px;
+      text-transform: uppercase;
+    }
+
+    .HeadingRow>.HeadingCell:first-child {
+      width: 50%;
+    }
+
+    .HeadingRow>.HeadingCell:last-child {
+      width: 25%;
+    }
+
+    .HeadingRow>.HeadingCell>.Sorting {
+      display: none;
+    }
+
+    .DataRow {
+      display: table-row;
+    }
+
+    .DataRow:hover {
+      background-color: var(--lightGreen-2);
+      box-shadow: 0px 0px 5px var(--green-1) inset;
+      transition: 0.2s;
+      transition-delay: 0.1s;
+      font-weight: 300;
+      text-shadow: 0px 1px darkgray;
+    }
+
+    .DataRow>.DataCell {
+      display: table-cell;
+      padding: 8px;
+    }
+
+    .DataRow>.DataCell>.Heading {
+      display: none;
+    }
+
+    .DataRow>.DataCell>.Data {
+      display: block;
+      line-break: strict;
+      word-break: break-all;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    body {
+      padding-bottom: 100px;
+    }
+    
+
+    .HeadingRow {
+      display: none;
+    }
+
+    .HeadingRow>.HeadingCell {
+      display: none;
+    }
+
+    .DataRow {
+      display: table;
+      margin: auto;
+      border-collapse: collapse;
+      border-spacing: 2px;
+      margin-bottom: 8px;
+      width: 90vw;
+    }
+
+    .DataRow:hover {
+      background-color:  var(--lightGreen-2);
+      box-shadow: 0px 0px 5px var(--green-1) inset;
+      transition: 0.2s;
+      transition-delay: 0.1s;
+      font-weight: 300;
+      text-shadow: 0px 1px darkgray;
+    }
+
+    .DataCell {
+      display: table-row;
+    }
+
+    .DataRow>.DataCell>.Heading {
+      display: table-cell;
+      width: 40%;
+      padding: 8px;
+      border: 1px solid black;
+      line-break: strict;
+
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: var(--green-1);
+      color: white;
+      vertical-align:middle;
+    }
+
+    .DataRow>.DataCell>.Data {
+      display: table-cell;
+      width: 60%;
+      padding: 8px;
+      border: 1px solid black;
+      line-break: strict;
+
+      word-break: break-all;
+    }
+
+    footer {
+      display: none;
+    }
+  }

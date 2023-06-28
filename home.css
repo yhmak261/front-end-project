@@ -1,0 +1,327 @@
+/* style guide recommend 
+1rem = 10px
+
+for mobile 
+title, font-size: 1.6rem, line-height: 1.8em
+info, font-size: 1.4rem, line-height: 1.6em
+
+for desktop 
+title, font-size: 3rem, line-height: 1.4em
+info, font-size: 2rem, line-height: 1.6em
+
+most of the case follow this guide, some of the special cases can omit it.
+
+*/
+
+/* hero section styles*/
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* left-col in down and right-col in up for mobile ↓ */
+  flex-direction: column-reverse;
+  gap: 4rem;
+}
+.hero-left {
+  max-width: 350px;
+}
+.hero-right {
+  max-width: 400px;
+  width: 80%;
+  margin: 0 auto;
+}
+.hero-heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  /* use em instead of rem for line-height ↓ , the em depends on the element font size */
+  line-height: 1.8em;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+.hero-info {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 2rem;
+  color: var(--black-2);
+  line-height: 1.6em;
+}
+.hero-imgWrapper img {
+  border-radius: 12px;
+}
+.button-wrapper {
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .hero-wrapper {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  /* .hero-left {
+    flex: 4;
+  }
+  .hero-right {
+    flex: 4;
+  } */
+  .hero-right {
+    margin-right: 0;
+  }
+  .hero-heading {
+    font-size: 3.6rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+  .hero-info {
+    margin-bottom: 3rem;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.6em;
+  }
+  .button-wrapper {
+    text-align: left;
+  }
+  .hero-imgWrapper {
+    max-width: none;
+    text-align: right;
+    /* width: 90%; */
+  }
+  #hero {
+    padding-bottom: 90px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .hero__right {
+    .hero-right {
+      margin-right: 30px;
+    }
+  }
+}
+
+/* testimonial section styles */
+.testimonial-title {
+  font-size: 1.6rem;
+  line-height: 1.6em;
+  color: var(--black-1);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.testimonial-quote {
+  color: var(--black-2);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6em;
+}
+.testimonial-user-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-user-icon {
+  display: block;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.testimonial-user-name {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.testimonial-user-position {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .testimonial-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  .testimonial-quote {
+    font-size: 2.3rem;
+    margin-bottom: 4rem;
+  }
+  .testimonial-user-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  .testimonial-user-name {
+    font-size: 2.4rem;
+  }
+  .testimonial-user-position {
+    font-size: 1.7rem;
+  }
+}
+
+/* description one section styles */
+.descOne-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.descOne-img {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.descOne-img img {
+  object-fit: cover;
+}
+.descOne-title {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+  color: var(--black-1);
+  margin-bottom: 2rem;
+}
+.descOne-info {
+  font-size: 1.4rem;
+  line-height: 1.6em;
+  color: var(--black-2);
+}
+@media only screen and (min-width: 768px) {
+  .descOne-wrapper {
+    flex-direction: row;
+    align-items: center;
+    /* max-width: 900px; */
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+  .descOne-left {
+    flex: 4;
+  }
+  .descOne-right {
+    flex: 3;
+  }
+  .descOne-title {
+    font-size: 3rem;
+    line-height: 1.4em;
+  }
+  .descOne-info {
+    font-size: 2rem;
+    line-height: 1.6em;
+  }
+}
+
+/* our products section styles */
+.ourProducts-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.ourProducts-title {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+.ourProducts-info {
+  font-size: 1.4rem;
+  line-height: 1.6em;
+  margin-bottom: 2rem;
+  color: var(--black-2);
+}
+.ourProducts-moreProductsBtn {
+  margin-bottom: 2rem;
+}
+.ourProducts-right {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.ourProducts-item {
+  background-color: var(--lightGreen-1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.ourProducts-item-img {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.ourProducts-item-img img {
+  object-fit: cover;
+}
+.ourProducts-item-title {
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  color: var(--black-1);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-price {
+  color: var(--green-1);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-stars {
+  height: 1.5rem;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-info {
+  font-size: 1.4rem;
+  color: var(--black-2);
+  margin-bottom: 1.5rem;
+}
+.ourProducts-item-buyBtnWrapper {
+  display: flex;
+  justify-content: center;
+}
+.ourProducts-item-buyBtn {
+  display: inline-block;
+}
+@media only screen and (min-width: 768px) {
+  .ourProducts-wrapper {
+    flex-direction: row;
+    align-items: center;
+    max-width: 900px;
+    gap: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ourProducts-left {
+    flex: 2;
+  }
+  .ourProducts-right {
+    flex: 4;
+    gap: 2rem;
+  }
+  .ourProducts-title {
+    font-size: 3.6rem;
+    line-height: 1.4em;
+    margin-bottom: 2.5rem;
+  }
+  .ourProducts-info {
+    font-size: 2rem;
+    line-height: 1.6em;
+  }
+  .ourProducts-item {
+    padding: 2rem;
+  }
+  .ourProducts-item-title {
+    font-size: 2.4rem;
+    line-height: 1.4em;
+    margin-bottom: 1.5rem;
+  }
+  .ourProducts-item-price {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .ourProducts-item-stars {
+    margin-bottom: 2rem;
+  }
+  .ourProducts-item-info {
+    font-size: 1.8rem;
+    line-height: 1.6em;
+  }
+}
